@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.n33l4m1n.github.springbootapi.Application;
+import com.n33l4m1n.github.springbootapi.services.HelloWorldService;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -18,6 +19,9 @@ public class HelloWorldControllerTest {
 
 	@Autowired
 	private HelloWorldController helloWorldController;
+	
+	@Autowired
+	HelloWorldService helloWorldService;
 
 	@Test
 	public void helloWorldControllerLoads() throws Exception {

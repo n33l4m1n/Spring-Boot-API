@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.n33l4m1n.github.springbootapi.services.HelloWorldService;
 
+import yahoofinance.Stock;
+
 @RestController
 public class HelloWorldController {
 	
@@ -21,8 +23,13 @@ public class HelloWorldController {
 		return helloWorldService.getHelloWorld();
 	}
 	
+	@PostMapping("/getStock")
+	public Stock getStock(@RequestBody String ticker) {
+		return helloWorldService.getStock(ticker);
+	}
+	
 	@PostMapping("/getStockPrice")
-	public BigDecimal getStockQuote(@RequestBody String ticker) {
+	public BigDecimal getStockPrice(@RequestBody String ticker) {
 		return helloWorldService.getStockPrice(ticker);
 	}
 }
